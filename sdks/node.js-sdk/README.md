@@ -37,6 +37,15 @@ console.table(table.toArray());
 * `apiKey` (string, required): API key to authenticate with the endpoint.
 * `url` (string, optional): URL of the endpoint to use (default: flight.spiceai.io:443)
 
+### Connection retry
+
+Starting from [version 1.0.1](https://github.com/spiceai/spice.js/releases/tag/v1.0.1) the `SpiceClient` implements connection retrying mechanism (3 attemps by default). This could be configured or disabled using `setMaxRetries`:
+
+```
+const spiceClient = new SpiceClient('API_KEY');
+spiceClient.setMaxRetries(5); // Setting to 0 will disable retries
+```
+
 ### Contributing
 
 Contribute to or file an issue with the Spice.js library at [https://github.com/spiceai/spice.js](https://github.com/spiceai/spice.js)
